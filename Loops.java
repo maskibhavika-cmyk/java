@@ -23,9 +23,9 @@
 // }
 
 
-public class Loops {
+// public class Loops {
     
-      public static void main(String args[]) {   
+//       public static void main(String args[]) {   
        // while loop
     //   int i = 0;
     //   while(i<11) {
@@ -40,12 +40,28 @@ public class Loops {
     //   i = i+1 ; 
     //  } while(i< 11);
 
-int i = 12;
-while(i< 11) {
-      System.out.println("Apna CLg");
-}
-  do{
-        System.out.println("Apna CLg");
-     } while(i< 11);
-      }
+// int i = 12;
+// while(i< 11) {
+//       System.out.println("Apna CLg");
+// }
+//   do{
+//         System.out.println("Apna CLg");
+//      } while(i< 11);
+//       }
+//     }
+
+
+import java.util.*;
+
+public class Loops {
+    
+      public static void main(String args[]) {   
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        for(int i = 0; i<=n; i++){
+            sum = sum +1;
+        }
+     System.out.println(sum);
+    } 
     }
