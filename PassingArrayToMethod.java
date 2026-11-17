@@ -8,5 +8,5 @@ public class PassingArrayToMethod {
     }
 public static void change(int[] y) {
     y[2] = 99;
-}
-}
+    }
+    }
