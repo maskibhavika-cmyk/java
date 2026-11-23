@@ -1,58 +1,54 @@
-
 import java.util.Arrays;
 
-class FindOriginalArray {
+public class FindOriginalArray {
     public static void main(String[] args) {
 
         int[] changed = {1, 3, 4, 2, 6, 8};
 
-        if (changed.length % 2 != 0) {
+        int n = changed.length;
+
+        if (n % 2 != 0) {
             System.out.println("Invalid Array");
             return;
         }
 
         Arrays.sort(changed);
 
-        int[] freq = new int[200001];
+        int[] original = new int[n / 2];
 
-        for (int x : changed) {
-            freq[x]++;
-        }
-
-        int[] ans = new int[changed.length / 2];
         int index = 0;
 
-        for (int x : changed) {
+        boolean[] used = new boolean[n];
 
-            if (freq[x] == 0) {
+        for (int i = 0; i < n; i++) {
+
+            if (used[i]) {
                 continue;
             }
 
-            if (x == 0) {
-                if (freq[0] < 2) {
-                    System.out.println("Invalid Array");
-                    return;
-                }
+            boolean found = false;
 
-                freq[0] -= 2;
-                ans[index] = 0;
-                index++;
+            for (int j = i + 1; j < n; j++) {
+
+                if (!used[j] && changed[j] == changed[i] * 2) {
+
+                    original[index] = changed[i];
+                    index++;
+
+                    used[i] = true;
+                    used[j] = true;
+
+                    found = true;
+                    break;
+                }
             }
 
-            else {
-                if (freq[2 * x] == 0) {
-                    System.out.println("Invalid Array");
-                    return;
-                }
-
-                freq[x]--;
-                freq[2 * x]--;
-
-                ans[index] = x;
-                index++;
+            if (!found) {
+                System.out.println("Invalid Array");
+                return;
             }
         }
 
-        System.out.println(Arrays.toString(ans));
+        System.out.println(Arrays.toString(original));
     }
 }
