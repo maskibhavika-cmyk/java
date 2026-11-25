@@ -17,7 +17,7 @@ public class FindOriginalArray {
         int[] original = new int[n / 2];
 
         int index = 0;
-
+       
         boolean[] used = new boolean[n];
 
         for (int i = 0; i < n; i++) {
