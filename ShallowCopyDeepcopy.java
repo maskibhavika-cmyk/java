@@ -12,7 +12,7 @@
 import java.util.Arrays;
 public class ShallowCopyDeepcopy {
   public static void main(String[] args) {
- int  a= 4;
+//  int  a= 4;
       int[] arr={10, 39, 4, 6, 25};
        int[] deep = Arrays.copyOf(arr,arr.length);
        deep [0] = 100;
